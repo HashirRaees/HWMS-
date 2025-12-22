@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HWMS - Medical Solutions</title>
+    <!-- ⭐ Remix Icons CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!-- ⭐ Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+      @font-face {
+        font-family: "Gilroy";
+        src: url("./fonts/Gilroy-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Gilroy";
+        src: url("./fonts/Gilroy-Medium.ttf") format("truetype");
+        font-weight: 500;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Gilroy";
+        src: url("./fonts/Gilroy-SemiBold.ttf") format("truetype");
+        font-weight: 600;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Gilroy";
+        src: url("./fonts/Gilroy-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "Gilroy";
+        src: url("./fonts/Gilroy-ExtraBold.ttf") format("truetype");
+        font-weight: 800;
+        font-style: normal;
+      }
+
+      body {
+        font-family: "Gilroy", sans-serif;
+        overflow-x: hidden;
+      }
+
+      .primary-bg {
+        background: linear-gradient(
+          301.76deg,
+          #288985 -52.67%,
+          #1e4846 100.66%
+        );
+      }
+
+      .bg-overlay-section {
+        background: url("./assets/bg-overlay.png"), #1e4846;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-blend-mode: overlay;
+      }
+
+      .promo-gradient {
+        background: linear-gradient(
+          270deg,
+          rgba(217, 217, 217, 0) 0%,
+          #038883 100%
+        );
+      }
+      .product-card {
+        transition: all 0.3s ease-in-out;
+      }
+      .product-card:hover {
+        transform: translateY(-5px);
+      }
+    </style>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          fontFamily: {
+            gilroy: ["Gilroy", "sans-serif"],
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-[#FFFFFF] text-[#333]">
+    <!-- Hero Section -->
+    <section
+      class="relative bg-[linear-gradient(301.76deg,#288985_-52.67%,#1E4846_100.66%)] min-h-[100vh] flex items-center px-5 md:px-10 pt-32 md:pt-44 pb-40 rounded-b-[60px] lg:rounded-b-[60px]"
+    >
+      <!-- Navbar Integrated -->
+      <nav
+        class="absolute top-0 left-0 z-50 w-full justify-between md:px-0 px-8 md:justify-center items-center py-4 flex gap-4"
+      >
+        <div
+          class="flex items-center bg-[#FFFFFF1A] backdrop-blur-xl border border-white rounded-full px-6 py-4 gap-2"
+        >
+          <img src="./assets/logo.png" alt="Logo" class="h-8" />
+        </div>
+        <div
+          class="bg-[#FFFFFF1A] hidden lg:flex w-[70%] backdrop-blur-xl border border-white rounded-full px-7 py-4 flex items-center justify-between"
+        >
+          <div class="ml-2 flex items-center gap-7 text-white">
+            <a
+              href="#"
+              class="hover: flex items-center gap-1 transition-colors text-sm"
+              >About us <i class="ri-arrow-drop-down-line text-xl"></i
+            ></a>
+            <a
+              href="#"
+              class="hover: flex items-center gap-1 transition-colors text-sm"
+              >Patient Services <i class="ri-arrow-drop-down-line text-xl"></i
+            ></a>
+            <a
+              href="#"
+              class="hover: flex items-center gap-1 transition-colors text-sm"
+              >Resource center <i class="ri-arrow-drop-down-line text-xl"></i
+            ></a>
+            <a href="#" class="hover: transition-colors text-sm"
+              >Contact Center
+            </a>
+            <a href="#" class="hover: transition-colors text-sm"
+              >Place Prescription Order</a
+            >
+          </div>
+          <div class="flex items-center gap-3">
+            <i class="ri-user-line text-lg text-white"></i>
+            <div class="flex items-center gap-4">
+              <img src="./assets/cart.png" class="h-5" alt="" />
+              <div
+                class="w-10 h-10 rounded-full bg-[#343B3A] flex items-center justify-center text-[#2CC4B8] cursor-pointer hover: hover:text-white transition-all shadow-lg"
+              >
+                <i class="ri-search-line"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mobile menu -->
+         <div>
+          <i class="ri-menu-line text-white text-xl cursor-pointer flex md:hidden"></i>
+         </div>
+      </nav>
+
+      <div
+        class="md:max-w-6xl md:px-20 rounded-3xl px-8 md:py-20 py-10 bg-[#0003021A] border border-[#288985] mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center w-full"
+      >
+        <div class="text-white">
+          <p class="text-lg mb-1">Free & Impartial Advice! </p>
+          <h1 class="md:text-7xl text-3xl font-semibold mb-6">
+            Restore Your
+            <span class="block font-extrabold md:text-8xl">Lifestyle.</span>
+          </h1>
+          <p class="text-base mb-6 md:max-w-md">
+            Our mission is to help you regain comfort, independence, and quality
+            of life. We proudly offer the largest selection of medical equipment
+            and medical supplies in New York to support your health and
+            lifestyle needs.
+          </p>
+          <div class="flex md:flex-row flex-col items-center gap-6">
+            <button
+              class="bg-white text-black px-5 py-4 rounded-xl text-sm transition-all transform hover:-translate-y-1"
+            >
+              Browse By Categories
+            </button>
+            <button
+              class="text-white text-sm px-7 py-4 rounded-xl border border-white"
+            >
+              Contact Us
+            </button>
+          </div>
+        </div>
+        <div class="flex flex-col justify-center items-center">
+          <img
+            src="./assets/hero-image.png"
+            alt="Medical Device"
+            class="w-full max-w-sm z-10"
+          />
+          <div class="flex gap-4 md:mt-4 mt-0 md:ml-40">
+            <i
+              class="ri-arrow-left-line w-10 text-white text-xl flex items-center justify-center h-10 border border-white rounded-full"
+            ></i>
+            <i
+              class="ri-arrow-right-line w-10 text-white text-xl flex items-center justify-center h-10 border border-white rounded-full"
+            ></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sponsors Section -->
+    <section
+      class="bg-[#EEEEEE] py-14 flex gap-10 flex-col items-center justify-center border-b border-gray-100"
+    >
+      <h2 class="text-3xl font-semibold">Shop By Brands</h2>
+      <div
+        class="max-w-7xl mx-auto w-full px-10 flex flex-wrap items-center justify-center gap-10"
+      >
+        <div
+          class="flex md:flex-row flex-col items-center justify-center gap-4"
+        >
+          <img
+            src="./assets/activeaire.png"
+            alt="Activeaire"
+            class="md:w-[170px] w-full"
+          />
+          <img src="./assets/soma.png" alt="Soma" class="md:w-[170px] w-full" />
+          <img
+            src="./assets/medmizer.png"
+            alt="Medmizer"
+            class="md:w-[170px] w-full"
+          />
+          <img
+            src="./assets/hilfrom.png"
+            alt="Hilfrom"
+            class="md:w-[170px] w-full"
+          />
+        </div>
+        <div class="bg-black h-8 w-[1px] md:flex hidden"></div>
+        <div class="flex items-center justify-center">
+          <button
+            class="bg-[#2CC4B8] px-8 py-6 rounded-xl text-sm text-white transition-all uppercase tracking-wider"
+          >
+            View all Brands
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products Section -->
+    <section class="py-24 px-10">
+      <div class="max-w-5xl mx-auto">
+        <div
+          class="flex items-center md:items-end justify-between mb-8 md:mb-16"
+        >
+          <div>
+            <h2 class="md:text-4xl font-semibold">Featured Products</h2>
+            <div class="w-16 h-1 rounded-full"></div>
+          </div>
+          <a
+            href="#"
+            class="text-black font-bold text-sm border-b border-black flex items-center gap-2 group"
+          >
+            View All
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Product Card 1 -->
+          <div class="flex flex-col gap-5 items-center text-center">
+            <div
+              class="flex product-card items-center w-full rounded-3xl border border-[#000000] px-6 py-4 justify-center"
+            >
+              <img
+                src="./assets/cruches.png"
+                alt="Crutches"
+                class="w-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Underarm Crutches</h3>
+              <p class="text-base px-4">Quick Adjust Adult Aluminum</p>
+            </div>
+          </div>
+
+          <!-- Product Card 2 -->
+          <div class="flex flex-col gap-5 items-center text-center">
+            <div
+              class="flex product-card items-center w-full rounded-3xl border border-[#000000] px-6 py-4 justify-center"
+            >
+              <img
+                src="./assets/medicine.png"
+                alt="Crutches"
+                class="w-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Glucose Strips</h3>
+              <p class="text-base px-4">Prodigy 50 ct</p>
+            </div>
+          </div>
+
+          <!-- Product Card 3 -->
+          <div class="flex flex-col gap-5 items-center text-center">
+            <div
+              class="flex product-card items-center w-full rounded-3xl border border-[#000000] px-6 py-4 justify-center"
+            >
+              <img
+                src="./assets/sugartest.png"
+                alt="Crutches"
+                class="w-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Glucose Meter</h3>
+              <p class="text-base px-4">Assure Prism Multi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Promo Banner Section -->
+    <section class="max-w-7xl mx-auto px-3 md:px-10 py-10 md:mb-24">
+      <div
+        class="md:rounded-[50px] rounded-[20px] overflow-hidden relative md:min-h-[700px] min-h-[400px] flex items-center"
+      >
+        <img
+          src="./assets/man-checking-bp.jpg"
+          alt="Blood Pressure"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 promo-gradient"></div>
+        <div
+          class="z-10 flex-col md:min-h-[700px] min-h-[400px] justify-between flex md:gap-24 px-4 py-6 md:px-20 md:py-12 max-w-3xl text-white"
+        >
+          <div class="flex-col flex gap-8">
+            <p class="md:text-2xl text-sm">Blood Pressure Monitors</p>
+            <h2 class="text-4xl md:text-6xl">
+              Confidence You Can Trust in Every Reading
+            </h2>
+            <p class="md:text-xl max-w-lg text-sm">
+              HWMS delivers clinically precise blood pressure
+              measurements—making it easy to monitor and manage your health with
+              confidence.
+            </p>
+          </div>
+          <h2 class="text-white underline py-1">View Shop</h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-24 px-10 bg-white">
+      <div class="max-w-5xl mx-auto">
+        <div
+          class="flex items-center md:items-end justify-between mb-10 md:mb-16"
+        >
+          <div>
+            <h2 class="md:text-4xl font-semibold">Shop By Category</h2>
+            <div class="w-16 h-1 rounded-full"></div>
+          </div>
+          <a
+            href="#"
+            class="text-black font-semibold text-sm border-b border-black hover:opacity-70 transition-opacity"
+          >
+            All Categories
+          </a>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
+          <!-- Category 1 -->
+          <div class="group cursor-pointer">
+            <div
+              class="bg-[#F3F3F3] border border-[#B9B9B9] rounded-[48px] p-8 md:p-12 flex items-center justify-center aspect-[1.1] transition-all"
+            >
+              <img
+                src="./assets/tester.png"
+                alt="Blood Glucose Monitors"
+                class="h-[70%] object-contain group-hover:scale-110 transition-transform duration-700"
+              />
+            </div>
+            <h3 class="text-3xl font-semibold mt-8 mb-2">
+              Blood Glucose Monitors
+            </h3>
+            <p class="text-base font-medium">
+              Accurate blood pressure readings, anywhere, anytime.
+            </p>
+          </div>
+
+          <!-- Category 2 -->
+          <div class="group cursor-pointer">
+            <div
+              class="bg-[#F3F3F3] rounded-[48px] border border-[#B9B9B9] p-8 md:p-1 flex items-center justify-center aspect-[1.1] transition-all hover:shadow-2xl hover:shadow-gray-200 overflow-hidden"
+            >
+              <img
+                src="./assets/crunch.png"
+                alt="Canes & Crutches"
+                class="h-[70%] object-contain group-hover:scale-110 transition-transform duration-700"
+              />
+            </div>
+            <h3 class="text-3xl font-semibold mt-8 mb-2">Canes & Crutches</h3>
+            <p class="text-base font-medium">
+              Accurate blood pressure readings, anywhere, anytime.
+            </p>
+          </div>
+
+          <!-- Category 3 -->
+          <div class="group col-span-1 cursor-pointer">
+            <div
+              class="bg-[#F3F3F3] rounded-[48px] border border-[#B9B9B9] p-8 md:p-12 flex items-center justify-center aspect-[1.1] transition-all hover:shadow-2xl hover:shadow-gray-200 overflow-hidden"
+            >
+              <img
+                src="./assets/hero-image.png"
+                alt="Enteral Nutrients"
+                class="h-[70%] object-contain group-hover:scale-110 transition-transform duration-700"
+              />
+            </div>
+            <h3 class="text-3xl font-semibold mt-8 mb-2">Enteral Nutrients</h3>
+            <p class="text-base font-medium">
+              Feeding Pump EnteraLite Infinity
+            </p>
+          </div>
+
+          <!-- Category 4 -->
+          <div class="group cursor-pointer">
+            <div
+              class="bg-[#F3F3F3] rounded-[48px] border border-[#B9B9B9] p-8 md:p-12 flex items-center justify-center aspect-[1.1] transition-all hover:shadow-2xl hover:shadow-gray-200 overflow-hidden"
+            >
+              <img
+                src="./assets/wheelchair.png"
+                alt="Commode"
+                class="h-[90%] object-contain group-hover:scale-110 transition-transform duration-700"
+              />
+            </div>
+            <h3 class="text-3xl font-semibold mt-8 mb-2">Commode</h3>
+            <p class="text-base font-medium">MJM Commode Shower Chair Deluxe</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Icon Features Section -->
+    <section
+      class="bg-[radial-gradient(ellipse_at_bottom_right,_#2CC4B8_-20%,_#1E4846_80%)] py-20 px-10"
+    >
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-16 text-white"
+      >
+        <!-- Feature 1 -->
+        <div
+          class="flex flex-col items-center text-center lg:items-start lg:text-left gap-5"
+        >
+          <div
+            class="w-20 h-20 bg-[#0003021A] border border-white/10 rounded-2xl flex items-center justify-center text-3xl shrink-0"
+          >
+            <img src="./assets/truck.png" alt="" class="w-16 object-contain" />
+          </div>
+          <div>
+            <h4 class="md:text-3xl font-semibold mb-2">Free Shipping</h4>
+            <p class="text-sm text-white">
+              Orders placed before 4 PM will be sent the same day expedited for
+              guaranteed fast shipping.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div
+          class="flex flex-col items-center text-center lg:items-start lg:text-left gap-5"
+        >
+          <div
+            class="w-20 h-20 bg-[#0003021A] border border-white/10 rounded-2xl flex items-center justify-center text-3xl shrink-0"
+          >
+            <img src="./assets/shield.png" alt="" class="w-8 object-contain" />
+          </div>
+          <div>
+            <h4 class="md:text-3xl font-semibold mb-2">Lifetime Warranty</h4>
+            <p class="text-sm text-white">
+              We’re incredibly proud of our workmanship and offer a lifetime
+              warranty on all our products.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div
+          class="flex flex-col items-center text-center lg:items-start lg:text-left gap-5"
+        >
+          <div
+            class="w-20 h-20 bg-[#0003021A] border border-white/10 rounded-2xl flex items-center justify-center text-3xl shrink-0"
+          >
+            <img
+              src="./assets/calendar.png"
+              alt=""
+              class="w-10 object-contain"
+            />
+          </div>
+          <div>
+            <h4 class="md:text-3xl font-semibold mb-2">30 Day Money Back</h4>
+            <p class="text-sm text-white">
+              Try an Oxiline device for 30 days and if you don’t love it we will
+              issue a full refund.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div
+          class="flex flex-col items-center text-center lg:items-start lg:text-left gap-5"
+        >
+          <div
+            class="w-20 h-20 bg-[#0003021A] border border-white/10 rounded-2xl flex items-center justify-center text-3xl shrink-0"
+          >
+            <img src="./assets/star.png" alt="" class="w-10 object-contain" />
+          </div>
+          <div>
+            <h4 class="md:text-3xl font-semibold mb-2">150,000+ Reviews</h4>
+            <p class="text-sm text-white">
+              We’re grateful for our amazing clients that have provided over
+              100,000 5-star reviews.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Our Mission Section -->
+    <section class="max-w-7xl mx-auto px-3 md:px-10 py-10 mt-24">
+      <div
+        class="md:rounded-[50px] rounded-[20px] overflow-hidden relative md:min-h-[700px] min-h-[400px] flex items-center"
+      >
+        <img
+          src="./assets/two-women.jpg"
+          alt="Blood Pressure"
+          class="absolute inset-0 w-full h-full object-cover"
+        />
+        <div class="absolute inset-0 promo-gradient"></div>
+        <div
+          class="z-10 flex-col md:min-h-[700px] min-h-[700px] justify-between flex md:gap-24 px-4 py-6 md:px-20 md:py-12 max-w-3xl text-white"
+        >
+          <div class="flex-col flex gap-8">
+            <h1 class="md:text-5xl text-2xl font-bold text-sm">Our Mission</h1>
+            <p class="md:text-xl max-w-lg text-sm">
+              Our mission at Health & Wellness Medical Supply is to offer
+              best-in-class Medical Equipment, Medical supplies, services, and
+              customer support. If you care for yourself, a loved one, or your
+              patient, we are here to help and share the responsibility.
+            </p>
+            <div class="flex flex-col gap-2">
+              <h2 class="text-xl font-semibold">Pharmacy</h2>
+              <p>
+                We are not a pharmacy, but several team members are licensed
+                pharmacist and nationally certified pharmacy technicians
+              </p>
+            </div>
+            <div class="flex flex-col gap-4">
+              <h2 class="text-xl font-semibold">Clinical Assessment</h2>
+              <h2 class="text-xl font-semibold">Insurance billing</h2>
+              <h2 class="text-xl font-semibold">At home delivery</h2>
+              <ul class="list-disc ml-5">
+                <li>
+                  Expertise in delivering equipment to our elderly population
+                </li>
+                <li>Home safety evaluation</li>
+                <li>Bedroom Safety</li>
+                <li>Bathroom Safety</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Specialties Section -->
+    <section
+      class="bg-[radial-gradient(ellipse_at_bottom_right,_#2CC4B8_-20%,_#1E4846_80%)] py-24 px-10 relative overflow-hidden"
+    >
+      <!-- Abstract Bg Decor -->
+      <div
+        class="absolute top-0 right-0 w-[400px] h-[400px] bg-white/5 rounded-full blur-[100px]"
+      ></div>
+      <div
+        class="absolute bottom-0 left-0 w-[300px] h-[300px] bg-accent/5 rounded-full blur-[80px]"
+      ></div>
+
+      <div class="max-w-7xl mx-auto relative z-10 text-center mb-16">
+        <h2 class="text-white text-4xl md:text-5xl font-semibold mb-4">
+          Our Core Specialities Include
+        </h2>
+        <p
+          class="text-white/80 max-w-4xl mx-auto font-medium text-sm md:text-base"
+        >
+          We offer a wide range of high-quality DME products, carefully selected
+          to meet patient needs and ensure comfort, safety, and compliance
+        </p>
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
+      >
+        <!-- Card 1 -->
+        <div
+          class="group relative h-[450px] md:h-[500px] rounded-[40px] overflow-hidden cursor-pointer shadow-2xl"
+        >
+          <img
+            src="./assets/toilet.png"
+            alt="Bathroom Safety"
+            class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+          ></div>
+          <div class="absolute bottom-8 left-8 right-8 text-white">
+            <h4 class="text-2xl font-bold mb-2">Bathroom Safety</h4>
+            <p class="text-sm opacity-80 leading-relaxed font-medium">
+              Commodes, Toilet Seats, Grab Bars, Anti-slip mats
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="group relative h-[450px] md:h-[500px] rounded-[40px] overflow-hidden cursor-pointer shadow-2xl"
+        >
+          <img
+            src="./assets/bed.png"
+            alt="Patient Care"
+            class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+          ></div>
+          <div class="absolute bottom-8 left-8 right-8 text-white">
+            <h4 class="text-2xl font-bold mb-2">Patient Room</h4>
+            <p class="text-sm opacity-80 leading-relaxed font-medium">
+              Hospital Beds, Mattresses, Overbed Tables, Accessories
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="group relative h-[450px] md:h-[500px] rounded-[40px] overflow-hidden cursor-pointer shadow-2xl"
+        >
+          <img
+            src="./assets/nebulizer.png"
+            alt="Respiratory Care"
+            class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+          ></div>
+          <div class="absolute bottom-8 left-8 right-8 text-white">
+            <h4 class="text-2xl font-bold mb-2">Respiratory Care</h4>
+            <p class="text-sm opacity-80 leading-relaxed font-medium">
+              Nebulizers, Oxygen Concentrators, CPAP/BiPAP Supplies
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pagination Dots -->
+      <div class="flex items-center justify-center gap-2">
+        <div
+          class="w-3 h-3 rounded-full border border-white cursor-pointer hover:bg-white transition-colors"
+        ></div>
+        <div
+          class="w-3 h-3 rounded-full border border-white cursor-pointer bg-white"
+        ></div>
+        <div
+          class="w-3 h-3 rounded-full border border-white cursor-pointer hover:bg-white transition-colors"
+        ></div>
+      </div>
+    </section>
+
+    <!-- Blog Section (Titled Shop By Category in design) -->
+    <section class="bg-white py-24 px-10">
+      <div class="max-w-7xl mx-auto">
+        <h2 class="text-4xl font-semibold text-center mb-16">Latest News</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Article 1 -->
+          <div
+            class="bg-white rounded-[30px] p-4 border border-[#DADEE2] flex flex-col h-full group"
+          >
+            <div class="relative h-64 rounded-[20px] overflow-hidden mb-6">
+              <img
+                src="./assets/stairs.png"
+                alt="Early Detection"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div
+                class="absolute top-4 left-4 bg-[#038883] text-white p-3 rounded-md text-center min-w-[60px]"
+              >
+                <span class="block text-xl font-bold leading-none">20</span>
+                <span class="text-[10px] uppercase font-bold">Jul</span>
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4"
+              >
+                <p class="text-[10px] text-white/90 font-medium">
+                  By Dr. Nishant Deshpande | Neurology
+                </p>
+              </div>
+            </div>
+            <div class="px-2 pb-4 flex flex-col flex-grow">
+              <h3 class="text-lg mb-4 leading-tight text-[#051B2E]">
+                The Vital Role of Early Detection in Heart and Kidney Diseases
+              </h3>
+              <p class="text-xs text-[#68747A] mb-6 leading-relaxed flex-grow">
+                Collaboratively administrate empowered markets via plug-and-play
+                networks. Dynamically procrastinate B2C users after...
+              </p>
+              <a
+                href="#"
+                class="text-xs font-bold text-[#051B2E] hover:text-[#038883] transition-colors border-b border-[#051B2E] hover:border-[#038883] w-fit pb-0.5"
+              >
+                Continue Reading
+              </a>
+            </div>
+          </div>
+
+          <!-- Article 2 -->
+          <div
+            class="bg-white rounded-[30px] p-4 border border-[#DADEE2] flex flex-col h-full group"
+          >
+            <div class="relative h-64 rounded-[20px] overflow-hidden mb-6">
+              <img
+                src="./assets/screening.png"
+                alt="Early Detection"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div
+                class="absolute top-4 left-4 bg-[#038883] text-white p-3 rounded-md text-center min-w-[60px]"
+              >
+                <span class="block text-xl font-bold leading-none">20</span>
+                <span class="text-[10px] uppercase font-bold">Jul</span>
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4"
+              >
+                <p class="text-[10px] text-white/90 font-medium">
+                  By Dr. Nishant Deshpande | Neurology
+                </p>
+              </div>
+            </div>
+            <div class="px-2 pb-4 flex flex-col flex-grow">
+              <h3 class="text-lg mb-4 leading-tight text-[#051B2E]">
+                Bone Marrow Transplant: A Possible Cure for Sickle Cell Disease
+              </h3>
+              <p class="text-xs text-[#68747A] mb-6 leading-relaxed flex-grow">
+                Collaboratively administrate empowered markets via plug-and-play
+                networks. Dynamically procrastinate B2C users after…
+              </p>
+              <a
+                href="#"
+                class="text-xs font-bold text-[#051B2E] hover:text-[#038883] transition-colors border-b border-[#051B2E] hover:border-[#038883] w-fit pb-0.5"
+              >
+                Continue Reading
+              </a>
+            </div>
+          </div>
+
+          <!-- Article 3 -->
+          <div
+            class="bg-white rounded-[30px] p-4 border border-[#DADEE2] flex flex-col h-full group"
+          >
+            <div class="relative h-64 rounded-[20px] overflow-hidden mb-6">
+              <img
+                src="./assets/testing.png"
+                alt="Early Detection"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+              />
+              <div
+                class="absolute top-4 left-4 bg-[#038883] text-white p-3 rounded-md text-center min-w-[60px]"
+              >
+                <span class="block text-xl font-bold leading-none">20</span>
+                <span class="text-[10px] uppercase font-bold">Jul</span>
+              </div>
+              <div
+                class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4"
+              >
+                <p class="text-[10px] text-white/90 font-medium">
+                  By Dr. Nishant Deshpande | Neurology
+                </p>
+              </div>
+            </div>
+            <div class="px-2 pb-4 flex flex-col flex-grow">
+              <h3 class="text-lg mb-4 leading-tight text-[#051B2E]">
+                What causes high blood pressure and blood fat?
+              </h3>
+              <p class="text-xs text-[#68747A] mb-6 leading-relaxed flex-grow">
+                Collaboratively administrate empowered markets via plug-and-play
+                networks. Dynamically procrastinate B2C users after...
+              </p>
+              <a
+                href="#"
+                class="text-xs font-bold text-[#051B2E] hover:text-[#038883] transition-colors border-b border-[#051B2E] hover:border-[#038883] w-fit pb-0.5"
+              >
+                Continue Reading
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-[#D0EBE9] py-24 px-10">
+      <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-[#1E4846] text-4xl font-semibold mb-16">
+          Frequently Asked Questions
+        </h2>
+
+        <div class="flex flex-col gap-4 text-left">
+          <!-- Item 1 (Open) -->
+          <div class="rounded-xl overflow-hidden shadow-sm">
+            <button
+              class="w-full bg-[#038883] text-white p-5 flex items-center justify-between font-medium text-sm md:text-base"
+            >
+              How do I choose the right medical equipment for my needs?
+              <i class="ri-subtract-line text-xl"></i>
+            </button>
+            <div
+              class="bg-white p-6 text-xs md:text-sm text-gray-500 leading-relaxed border border-t-0 border-[#038883]/10"
+            >
+              The right equipment depends on your health condition, mobility
+              level, and daily routine. Start by identifying your specific
+              needs—such as mobility support, bathroom safety, or home comfort.
+              Check product sizing guides to ensure a proper fit, and when in
+              doubt, consult your healthcare provider for recommendations.
+            </div>
+          </div>
+
+          <!-- Item 2 (Closed) -->
+          <div class="rounded-xl overflow-hidden shadow-sm bg-[#F0F5F5]">
+            <button
+              class="w-full p-5 flex items-center justify-between font-medium text-sm md:text-base text-gray-600 hover:text-[#038883] transition-colors"
+            >
+              How do I pick the right size and type of equipment?
+              <i class="ri-add-line text-xl text-[#038883]"></i>
+            </button>
+          </div>
+
+          <!-- Item 3 (Closed) -->
+          <div class="rounded-xl overflow-hidden shadow-sm bg-[#F0F5F5]">
+            <button
+              class="w-full p-5 flex items-center justify-between font-medium text-sm md:text-base text-gray-600 hover:text-[#038883] transition-colors"
+            >
+              Which medical equipment is best for me?
+              <i class="ri-add-line text-xl text-[#038883]"></i>
+            </button>
+          </div>
+        </div>
+
+        <button
+          class="mt-12 bg-[#038883] text-white px-8 py-3 rounded-lg text-sm font-semibold hover:bg-[#026e6a] transition-colors shadow-lg shadow-[#038883]/20"
+        >
+          See More
+        </button>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1E4846] flex justify-center flex-col text-white py-16 px-10">
+      <div
+        class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-16"
+      >
+        <!-- Brand -->
+        <div class="lg:col-span-1">
+          <div class="flex flex-col gap-1 mb-6">
+            <div class="flex items-center gap-2">
+              <img src="./assets/logo.png" class="w-44" alt="">
+            </div>
+          </div>
+          <h2 class="text-3xl font-bold mb-8 leading-tight">
+            Health & Wellness <br> <span class="font-normal">Medical Supplies</span>
+          </h2>
+          <div class="flex gap-4">
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#2CC4B8] transition-colors"
+            >
+              <i class="ri-facebook-fill text-sm"></i>
+            </a>
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#2CC4B8] transition-colors"
+            >
+              <i class="ri-twitter-x-line text-sm"></i>
+            </a>
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#2CC4B8] transition-colors"
+            >
+              <i class="ri-linkedin-fill text-sm"></i>
+            </a>
+            <a
+              href="#"
+              class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#2CC4B8] transition-colors"
+            >
+              <i class="ri-instagram-line text-sm"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Links -->
+        <div class="lg:col-span-1">
+          <h4 class="font-bold text-lg mb-6">Useful Links</h4>
+          <ul class="space-y-4 text-sm opacity-80">
+            <li>
+              <a href="#" class="hover:text-[#2CC4B8] transition-colors"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#2CC4B8] transition-colors"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#2CC4B8] transition-colors"
+                >Contact Us</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#2CC4B8] transition-colors"
+                >Gallery</a
+              >
+            </li>
+            <li>
+              <a href="#" class="hover:text-[#2CC4B8] transition-colors"
+                >Customer's Reviews</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="lg:col-span-1">
+          <h4 class="font-bold text-lg mb-6">Contact Information</h4>
+          <div class="space-y-6 text-sm opacity-90">
+            <div class="flex gap-2">
+              <span class="font-bold w-20">Office:</span>
+              <span>+1 (609) 623-2492</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="font-bold w-20">Fax:</span>
+              <span>(609) 676-3542</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="font-bold w-20">Email:</span>
+              <span>Info@healthandwellnessmedicalsupply.com</span>
+            </div>
+            <div class="flex gap-2">
+              <span class="font-bold w-20">Address:</span>
+              <span>125 Michael Drive suite # 105, Syosset NY 11791</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto border-t border-white/10 mt-16 pt-8 text-center text-xs opacity-50"
+      >
+        &copy; 2025 Health & Wellness Medical Supply. All Rights Reserved.
+      </div>
+    </footer>
+
+    <!-- Custom Animations -->
+    <style>
+      @keyframes bounce-slow {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-15px);
+        }
+      }
+      .animate-bounce-slow {
+        animation: bounce-slow 4s ease-in-out infinite;
+      }
+    </style>
+
+    <script>
+      const nav = document.getElementById("navbar");
+      window.onscroll = function () {
+        if (window.scrollY > 50) {
+          nav.classList.add("/95", "backdrop-blur-xl", "py-4", "");
+          nav.classList.remove("py-6");
+        } else {
+          nav.classList.remove("/95", "backdrop-blur-xl", "py-4", "");
+          nav.classList.add("py-6");
+        }
+      };
+    </script>
+  </body>
+</html>
