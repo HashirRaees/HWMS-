@@ -371,36 +371,64 @@
       <div
         class="max-w-7xl mx-auto w-full justify-center px-10 flex md:flex-row flex-col flex-wrap items-center gap-10"
       >
-        <div
-          class="flex md:flex-row flex-col items-center justify-center gap-4"
-        >
-          <div>
-            <img
-              src="./assets/activeaire.png"
-              alt="Activeaire"
-              class="md:w-[170px] w-full"
-            />
-          </div>
-          <div>
-            <img
-              src="./assets/soma.png"
-              alt="Soma"
-              class="md:w-[170px] w-full"
-            />
-          </div>
-          <div>
-            <img
-              src="./assets/medmizer.png"
-              alt="Medmizer"
-              class="md:w-[170px] w-full"
-            />
-          </div>
-          <div>
-            <img
-              src="./assets/hilfrom.png"
-              alt="Hilfrom"
-              class="md:w-[170px] w-full"
-            />
+        <div class="swiper w-[250px] md:w-[680px] mx-0 shop-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide mr-0 w-[150px]">
+              <img
+                src="./assets/activeaire.png"
+                alt="Activeaire"
+                class="md:w-[170px] w-full"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./assets/soma.png"
+                alt="Soma"
+                class="md:w-[170px] w-full"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./assets/medmizer.png"
+                alt="Medmizer"
+                class="md:w-[170px] w-full"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./assets/hilfrom.png"
+                alt="Hilfrom"
+                class="md:w-[170px] w-full"
+              />
+            </div>
+            <div class="swiper-slide mr-0 w-[150px]">
+              <img
+                src="./assets/activeaire.png"
+                alt="Activeaire"
+                class="md:w-[170px] w-full"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./assets/soma.png"
+                alt="Soma"
+                class="md:w-[170px] w-full"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./assets/medmizer.png"
+                alt="Medmizer"
+                class="md:w-[170px] w-full"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./assets/hilfrom.png"
+                alt="Hilfrom"
+                class="md:w-[170px] w-full"
+              />
+            </div>
           </div>
         </div>
         <div class="bg-black h-8 w-[1px] md:flex hidden"></div>
@@ -763,7 +791,7 @@
       </div>
 
       <div class="max-w-7xl mx-auto gap-8 mb-12">
-        <div class="swiper-2 swiper md:h-[500px]">
+        <div class="swiper core-swiper md:h-[500px]">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <!-- Card 1 -->
@@ -1231,7 +1259,7 @@
       },
     });
 
-    const swiper2 = new Swiper(".swiper-2", {
+    const CoreSwiper = new Swiper(".core-swiper", {
       autoplay: true,
       slidesPerView: 1,
       spaceBetween: 10,
@@ -1251,6 +1279,30 @@
         640: {
           slidesPerView: 3,
           spaceBetween: 40,
+        },
+      },
+    });
+
+    const ShopSwiper = new Swiper(".shop-swiper", {
+      autoplay: true,
+      slidesPerView: 1,
+      spaceBetween: 10,
+      // Responsive breakpoints
+      breakpoints: {
+        // when window width is >= 320px
+        320: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        // when window width is >= 480px
+        480: {
+          slidesPerView: 1,
+          spaceBetween: 10,
+        },
+        // when window width is >= 640px
+        640: {
+          slidesPerView: 4,
+          spaceBetween: 10,
         },
       },
     });
