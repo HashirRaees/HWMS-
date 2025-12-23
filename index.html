@@ -9,6 +9,12 @@
       href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
       rel="stylesheet"
     />
+    <!-- ⭐ Swiper Js CDN -->
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
 
     <!-- ⭐ Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -79,6 +85,103 @@
       .product-card:hover {
         transform: translateY(-5px);
       }
+      .swiper-button-next {
+        top: 400px !important;
+      }
+      .swiper-button-prev {
+        top: 400px !important;
+        left: 76% !important;
+      }
+      .swiper-navigation-icon {
+        display: none !important;
+      }
+      .side-menu ul {
+        display: none;
+      }
+      #menu-toggle {
+        display: none;
+      }
+      .hamburger {
+        display: none;
+      }
+      .side-menu {
+        display: none;
+      }
+      @media screen and (max-width: 600px) and (min-width: 300px) {
+        .swiper-button-next {
+          top: 260px !important;
+          right: 30% !important;
+        }
+        .swiper-button-prev {
+          top: 260px !important;
+          left: 30% !important;
+        }
+        #menu-toggle {
+          display: none;
+        }
+        /* Hamburger Icon - now positioned on right */
+        .hamburger {
+          height: 10%;
+          width: 20%;
+          justify-content: center;
+          display: flex;
+          align-items: center;
+          cursor: pointer;
+          z-index: 1001;
+        }
+        .hamburger i {
+          font-size: 25px;
+          font-weight: 200;
+          color: white;
+        }
+
+        /* Side Menu - open from right */
+        .side-menu {
+          position: fixed;
+          top: 0;
+          right: -380px; /* changed from left */
+          height: 100%;
+          width: 80%;
+          background-color: #03b1ab5e;
+          backdrop-filter: blur(10px);
+          padding-top: 60px;
+          transition: 0.6s ease;
+          display: block;
+          z-index: 1000;
+        }
+        .side-menu ul {
+          list-style: none;
+          display: flex;
+          gap: 30px;
+          flex-direction: column;
+          align-items: center;
+          padding: 50px 0px;
+          /* justify-content: center; */
+        }
+        .side-menu ul li {
+          padding: 10px 0px;
+        }
+
+        /* Slide menu when checked */
+        #menu-toggle:checked ~ .side-menu {
+          right: 0;
+        }
+
+        /* Optional: shift content to the left when menu is open */
+        #menu-toggle:checked ~ .content {
+          margin-right: 250px;
+          transition: margin 0.3s ease;
+        }
+        .nav-item {
+          color: white;
+          font-weight: 600;
+          text-decoration: none;
+          transition: 0.3s;
+          font-size: 4vw;
+          display: flex;
+          align-items: center;
+        }
+      }
     </style>
 
     <script>
@@ -145,9 +248,34 @@
         </div>
 
         <!-- Mobile menu -->
-         <div>
-          <i class="ri-menu-line text-white text-xl cursor-pointer flex md:hidden"></i>
-         </div>
+        <!-- Menu Toggle -->
+        <input type="checkbox" id="menu-toggle" />
+
+        <!-- Hamburger Icon -->
+        <label for="menu-toggle" class="hamburger">
+          <i class="ri-menu-line"></i>
+        </label>
+
+        <!-- Side Menu -->
+        <nav class="side-menu">
+          <ul>
+            <a class="nav-item" href="#"
+              ><li>About us <i class="ri-arrow-drop-down-line text-xl"></i></li
+            ></a>
+            <a class="nav-item" href="#"
+              ><li>
+                Patient Services
+                <i class="ri-arrow-drop-down-line text-xl"></i></li
+            ></a>
+            <a class="nav-item" href="#"
+              ><li>
+                Resource center
+                <i class="ri-arrow-drop-down-line text-xl"></i></li
+            ></a>
+            <a class="nav-item" href="#"><li>Contact Center</li></a>
+            <a class="nav-item" href="#"><li>Place Prescription Order</li></a>
+          </ul>
+        </nav>
       </nav>
 
       <div
@@ -178,16 +306,55 @@
             </button>
           </div>
         </div>
-        <div class="flex flex-col justify-center items-center">
-          <img
-            src="./assets/hero-image.png"
-            alt="Medical Device"
-            class="w-full max-w-sm z-10"
-          />
-          <div class="flex gap-4 md:mt-4 mt-0 md:ml-40">
+        <!-- Slider main container -->
+        <div class="swiper h-[300px] w-[280px] md:h-[420px] md:w-[450px]">
+          <!-- Additional required wrapper -->
+          <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide">
+              <img
+                src="./assets/hero-image.png"
+                alt="Medical Device"
+                class="w-full max-w-md z-10"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./assets/hero-image.png"
+                alt="Medical Device"
+                class="w-full max-w-md z-10"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./assets/hero-image.png"
+                alt="Medical Device"
+                class="w-full max-w-md z-10"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./assets/hero-image.png"
+                alt="Medical Device"
+                class="w-full max-w-md z-10"
+              />
+            </div>
+            <div class="swiper-slide">
+              <img
+                src="./assets/hero-image.png"
+                alt="Medical Device"
+                class="w-full max-w-md z-10"
+              />
+            </div>
+          </div>
+
+          <!-- navigation buttons -->
+          <div class="swiper-button-prev">
             <i
               class="ri-arrow-left-line w-10 text-white text-xl flex items-center justify-center h-10 border border-white rounded-full"
             ></i>
+          </div>
+          <div class="swiper-button-next">
             <i
               class="ri-arrow-right-line w-10 text-white text-xl flex items-center justify-center h-10 border border-white rounded-full"
             ></i>
@@ -202,27 +369,39 @@
     >
       <h2 class="text-3xl font-semibold">Shop By Brands</h2>
       <div
-        class="max-w-7xl mx-auto w-full px-10 flex flex-wrap items-center justify-center gap-10"
+        class="max-w-7xl mx-auto w-full justify-center px-10 flex md:flex-row flex-col flex-wrap items-center gap-10"
       >
         <div
           class="flex md:flex-row flex-col items-center justify-center gap-4"
         >
-          <img
-            src="./assets/activeaire.png"
-            alt="Activeaire"
-            class="md:w-[170px] w-full"
-          />
-          <img src="./assets/soma.png" alt="Soma" class="md:w-[170px] w-full" />
-          <img
-            src="./assets/medmizer.png"
-            alt="Medmizer"
-            class="md:w-[170px] w-full"
-          />
-          <img
-            src="./assets/hilfrom.png"
-            alt="Hilfrom"
-            class="md:w-[170px] w-full"
-          />
+          <div>
+            <img
+              src="./assets/activeaire.png"
+              alt="Activeaire"
+              class="md:w-[170px] w-full"
+            />
+          </div>
+          <div>
+            <img
+              src="./assets/soma.png"
+              alt="Soma"
+              class="md:w-[170px] w-full"
+            />
+          </div>
+          <div>
+            <img
+              src="./assets/medmizer.png"
+              alt="Medmizer"
+              class="md:w-[170px] w-full"
+            />
+          </div>
+          <div>
+            <img
+              src="./assets/hilfrom.png"
+              alt="Hilfrom"
+              class="md:w-[170px] w-full"
+            />
+          </div>
         </div>
         <div class="bg-black h-8 w-[1px] md:flex hidden"></div>
         <div class="flex items-center justify-center">
@@ -586,63 +765,74 @@
       <div
         class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 mb-12"
       >
-        <!-- Card 1 -->
-        <div
-          class="group relative h-[450px] md:h-[500px] rounded-[40px] overflow-hidden cursor-pointer shadow-2xl"
-        >
-          <img
-            src="./assets/toilet.png"
-            alt="Bathroom Safety"
-            class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
-          ></div>
-          <div class="absolute bottom-8 left-8 right-8 text-white">
-            <h4 class="text-2xl font-bold mb-2">Bathroom Safety</h4>
-            <p class="text-sm opacity-80 leading-relaxed font-medium">
-              Commodes, Toilet Seats, Grab Bars, Anti-slip mats
-            </p>
-          </div>
-        </div>
+        <div class="swiper-2 bg-black swiper w-full md:h-[500px]">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <!-- Card 1 -->
+              <div
+                class="group relative h-[450px] md:h-[500px] rounded-[40px] overflow-hidden cursor-pointer shadow-2xl"
+              >
+                <img
+                  src="./assets/toilet.png"
+                  alt="Bathroom Safety"
+                  class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+                ></div>
+                <div class="absolute bottom-8 left-8 right-8 text-white">
+                  <h4 class="text-2xl font-bold mb-2">Bathroom Safety</h4>
+                  <p class="text-sm opacity-80 leading-relaxed font-medium">
+                    Commodes, Toilet Seats, Grab Bars, Anti-slip mats
+                  </p>
+                </div>
+              </div>
+            </div>
 
-        <!-- Card 2 -->
-        <div
-          class="group relative h-[450px] md:h-[500px] rounded-[40px] overflow-hidden cursor-pointer shadow-2xl"
-        >
-          <img
-            src="./assets/bed.png"
-            alt="Patient Care"
-            class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
-          ></div>
-          <div class="absolute bottom-8 left-8 right-8 text-white">
-            <h4 class="text-2xl font-bold mb-2">Patient Room</h4>
-            <p class="text-sm opacity-80 leading-relaxed font-medium">
-              Hospital Beds, Mattresses, Overbed Tables, Accessories
-            </p>
+            <div class="swiper-slide">
+            <!-- Card 2 -->
+            <div
+              class="group relative h-[450px] md:h-[500px] rounded-[40px] overflow-hidden cursor-pointer shadow-2xl"
+            >
+              <img
+                src="./assets/bed.png"
+                alt="Patient Care"
+                class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+              ></div>
+              <div class="absolute bottom-8 left-8 right-8 text-white">
+                <h4 class="text-2xl font-bold mb-2">Patient Room</h4>
+                <p class="text-sm opacity-80 leading-relaxed font-medium">
+                  Hospital Beds, Mattresses, Overbed Tables, Accessories
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
 
-        <!-- Card 3 -->
-        <div
-          class="group relative h-[450px] md:h-[500px] rounded-[40px] overflow-hidden cursor-pointer shadow-2xl"
-        >
-          <img
-            src="./assets/nebulizer.png"
-            alt="Respiratory Care"
-            class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
-          />
-          <div
-            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
-          ></div>
-          <div class="absolute bottom-8 left-8 right-8 text-white">
-            <h4 class="text-2xl font-bold mb-2">Respiratory Care</h4>
-            <p class="text-sm opacity-80 leading-relaxed font-medium">
-              Nebulizers, Oxygen Concentrators, CPAP/BiPAP Supplies
-            </p>
+          <div class="swiper-slide">
+            <!-- Card 3 -->
+            <div
+              class="group relative h-[450px] md:h-[500px] rounded-[40px] overflow-hidden cursor-pointer shadow-2xl"
+            >
+              <img
+                src="./assets/nebulizer.png"
+                alt="Respiratory Care"
+                class="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"
+              ></div>
+              <div class="absolute bottom-8 left-8 right-8 text-white">
+                <h4 class="text-2xl font-bold mb-2">Respiratory Care</h4>
+                <p class="text-sm opacity-80 leading-relaxed font-medium">
+                  Nebulizers, Oxygen Concentrators, CPAP/BiPAP Supplies
+                </p>
+              </div>
+            </div>
+          </div>
+
           </div>
         </div>
       </div>
@@ -850,7 +1040,9 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-[#1E4846] flex justify-center flex-col text-white py-16 px-10">
+    <footer
+      class="bg-[#1E4846] flex justify-center flex-col text-white py-16 px-10"
+    >
       <div
         class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 w-full gap-16"
       >
@@ -858,11 +1050,12 @@
         <div class="lg:col-span-1">
           <div class="flex flex-col gap-1 mb-6">
             <div class="flex items-center gap-2">
-              <img src="./assets/logo.png" class="w-44" alt="">
+              <img src="./assets/logo.png" class="w-44" alt="" />
             </div>
           </div>
           <h2 class="text-3xl font-bold mb-8 leading-tight">
-            Health & Wellness <br> <span class="font-normal">Medical Supplies</span>
+            Health & Wellness <br />
+            <span class="font-normal">Medical Supplies</span>
           </h2>
           <div class="flex gap-4">
             <a
@@ -894,7 +1087,7 @@
 
         <!-- Links -->
         <div class="lg:col-span-1">
-          <h4 class="font-bold text-lg mb-6">Useful Links</h4>
+          <h4 class="font-semibold text-lg mb-6">Useful Links</h4>
           <ul class="space-y-4 text-sm opacity-80">
             <li>
               <a href="#" class="hover:text-[#2CC4B8] transition-colors"
@@ -929,19 +1122,19 @@
           <h4 class="font-bold text-lg mb-6">Contact Information</h4>
           <div class="space-y-6 text-sm opacity-90">
             <div class="flex gap-2">
-              <span class="font-bold w-20">Office:</span>
+              <span class="font-semibold w-20">Office:</span>
               <span>+1 (609) 623-2492</span>
             </div>
             <div class="flex gap-2">
-              <span class="font-bold w-20">Fax:</span>
+              <span class="font-semibold w-20">Fax:</span>
               <span>(609) 676-3542</span>
             </div>
             <div class="flex gap-2">
-              <span class="font-bold w-20">Email:</span>
+              <span class="font-semibold w-20">Email:</span>
               <span>Info@healthandwellnessmedicalsupply.com</span>
             </div>
             <div class="flex gap-2">
-              <span class="font-bold w-20">Address:</span>
+              <span class="font-semibold w-20">Address:</span>
               <span>125 Michael Drive suite # 105, Syosset NY 11791</span>
             </div>
           </div>
@@ -954,34 +1147,49 @@
         &copy; 2025 Health & Wellness Medical Supply. All Rights Reserved.
       </div>
     </footer>
-
-    <!-- Custom Animations -->
-    <style>
-      @keyframes bounce-slow {
-        0%,
-        100% {
-          transform: translateY(0);
-        }
-        50% {
-          transform: translateY(-15px);
-        }
-      }
-      .animate-bounce-slow {
-        animation: bounce-slow 4s ease-in-out infinite;
-      }
-    </style>
-
-    <script>
-      const nav = document.getElementById("navbar");
-      window.onscroll = function () {
-        if (window.scrollY > 50) {
-          nav.classList.add("/95", "backdrop-blur-xl", "py-4", "");
-          nav.classList.remove("py-6");
-        } else {
-          nav.classList.remove("/95", "backdrop-blur-xl", "py-4", "");
-          nav.classList.add("py-6");
-        }
-      };
-    </script>
   </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+  <script>
+    const swiper = new Swiper(".swiper", {
+      // Optional parameters
+      direction: "horizontal",
+      loop: true,
+
+      // If we need pagination
+      pagination: {
+        el: ".swiper-pagination",
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+
+    const swiper2 = new Swiper('.swiper-2',{
+      autoplay: true,
+       slidesPerView: 1,
+  spaceBetween: 10,
+  // Responsive breakpoints
+  breakpoints: {
+    // when window width is >= 320px
+    320: {
+      slidesPerView: 2,
+      spaceBetween: 20
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 3,
+      spaceBetween: 30
+    },
+    // when window width is >= 640px
+    640: {
+      slidesPerView: 4,
+      spaceBetween: 40
+    }
+  }
+    })
+  </script>
 </html>
