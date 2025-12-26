@@ -307,7 +307,7 @@
           </div>
         </div>
         <!-- Slider main container -->
-        <div class="swiper h-[300px] w-[280px] md:h-[420px] md:w-[450px]">
+        <div class="swiper swiper-hero h-[300px] w-[280px] md:h-[420px] md:w-[450px]">
           <!-- Additional required wrapper -->
           <div class="swiper-wrapper">
             <!-- Slides -->
@@ -1242,7 +1242,7 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
   <script>
-    const swiper = new Swiper(".swiper", {
+    new Swiper(".swiper-hero", {
       // Optional parameters
       direction: "horizontal",
       loop: true,
@@ -1263,19 +1263,15 @@
       autoplay: true,
       slidesPerView: 1,
       spaceBetween: 10,
-      // Responsive breakpoints
       breakpoints: {
-        // when window width is >= 320px
         320: {
           slidesPerView: 1,
           spaceBetween: 10,
         },
-        // when window width is >= 480px
         480: {
           slidesPerView: 1,
           spaceBetween: 10,
         },
-        // when window width is >= 640px
         640: {
           slidesPerView: 3,
           spaceBetween: 40,
@@ -1283,23 +1279,14 @@
       },
     });
 
-    const ShopSwiper = new Swiper(".shop-swiper", {
+    new Swiper(".shop-swiper", {
       autoplay: true,
-      slidesPerView: 1,
-      spaceBetween: 10,
-      // Responsive breakpoints
+      loop:true,
       breakpoints: {
-        // when window width is >= 320px
         320: {
           slidesPerView: 1,
           spaceBetween: 10,
         },
-        // when window width is >= 480px
-        480: {
-          slidesPerView: 1,
-          spaceBetween: 10,
-        },
-        // when window width is >= 640px
         640: {
           slidesPerView: 4,
           spaceBetween: 10,
